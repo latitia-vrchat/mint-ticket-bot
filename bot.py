@@ -46,8 +46,6 @@ Hello! Thank you for reaching out.
 
 **Current status**: {status_message}
 
-I will respond to your inquiry as soon as I'm available. {next_available}
-
 **Note**: My job is not a set schedule, so If I'm not responding during the day then I'm at work.
 
 Thank you for your patience! 🌷
@@ -404,3 +402,4 @@ if __name__ == '__main__':
         print(f'✅ Token 長度：{len(TOKEN)} 字元')
 
         bot.run(TOKEN)
+
