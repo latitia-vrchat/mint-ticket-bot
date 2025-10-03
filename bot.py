@@ -219,7 +219,7 @@ async def check_status(ctx):
     
     embed.add_field(
         name="😴 Bedtime", 
-        value=f"每天 {SLEEP_START.strftime('%H:%M')} - {SLEEP_END.strftime('%H:%M')}", 
+        value=f"Daily {SLEEP_START.strftime('%H:%M')} - {SLEEP_END.strftime('%H:%M')}", 
         inline=False
     )
     
@@ -233,11 +233,11 @@ async def check_status(ctx):
     
     monitoring_info = []
     if MONITORED_CATEGORIES:
-        monitoring_info.append(f"📁 Category：{len(MONITORED_CATEGORIES)} 個")
+        monitoring_info.append(f"📁 Category：{len(MONITORED_CATEGORIES)} ")
     if MONITORED_CHANNELS:
-        monitoring_info.append(f"💬 Channel：{len(MONITORED_CHANNELS)} 個")
+        monitoring_info.append(f"💬 Channel：{len(MONITORED_CHANNELS)} ")
     if MONITORED_FORUM_NAMES:
-        monitoring_info.append(f"📋 Forum：{len(MONITORED_FORUM_NAMES)} 個")
+        monitoring_info.append(f"📋 Forum：{len(MONITORED_FORUM_NAMES)} ")
     
     if monitoring_info:
         embed.add_field(
@@ -376,11 +376,11 @@ async def help_command(ctx):
     
     embed.add_field(name="!status", value="Check the robot's current status", inline=False)
     embed.add_field(name="!check", value="Check whether the current channel is being monitored.", inline=False)
-    embed.add_field(name="!list (管理員)", value="List all monitoring settings", inline=False)
-    embed.add_field(name="!test (管理員)", value="Testing automated reply messages", inline=False)
-    embed.add_field(name="!clear (管理員)", value="Clear replied records", inline=False)
-    embed.add_field(name="!add (管理員)", value="Mark current channel as replied", inline=False)
-    embed.add_field(name="!remove (管理員)", value="Remove current channel marker", inline=False)
+    embed.add_field(name="!list (Administrator)", value="List all monitoring settings", inline=False)
+    embed.add_field(name="!test (Administrator)", value="Testing automated reply messages", inline=False)
+    embed.add_field(name="!clear (Administrator)", value="Clear replied records", inline=False)
+    embed.add_field(name="!add (Administrator)", value="Mark current channel as replied", inline=False)
+    embed.add_field(name="!remove (Administrator)", value="Remove current channel marker", inline=False)
     embed.add_field(name="!help_bot", value="Display this help message", inline=False)
     
     await ctx.send(embed=embed)
@@ -402,4 +402,5 @@ if __name__ == '__main__':
         print(f'✅ Token 長度：{len(TOKEN)} 字元')
 
         bot.run(TOKEN)
+
 
