@@ -48,7 +48,7 @@ Hello! Thank you for reaching out.
 
 I will respond to your inquiry as soon as I'm available. {next_available}
 
-**Note**: My job is not a ser schedule, so If I'm not responding during the day then I'm at work.
+**Note**: My job is not a set schedule, so If I'm not responding during the day then I'm at work.
 
 Thank you for your patience! 🌷
 """
@@ -134,9 +134,9 @@ async def on_ready():
     print(f'😴 Sleep Schedule：{SLEEP_START.strftime("%H:%M")} - {SLEEP_END.strftime("%H:%M")}')
     print(f'💼 Current Status：{"😴 Sleeping" if is_sleep_time() else "✅ Awake"}')
     print('\n🔍 Monitoring Settings：')
-    print(f'  📁 Monitoring Category：{MONITORED_CATEGORIES if MONITORED_CATEGORIES else "無"}')
-    print(f'  💬 Monitoring Channel：{MONITORED_CHANNELS if MONITORED_CHANNELS else "無"}')
-    print(f'  📋 Monitoring Forum：{MONITORED_FORUM_NAMES if MONITORED_FORUM_NAMES else "無"}')
+    print(f'  📁 Monitoring Category：{MONITORED_CATEGORIES if MONITORED_CATEGORIES else "None"}')
+    print(f'  💬 Monitoring Channel：{MONITORED_CHANNELS if MONITORED_CHANNELS else "None"}')
+    print(f'  📋 Monitoring Forum：{MONITORED_FORUM_NAMES if MONITORED_FORUM_NAMES else "None"}')
     print('=' * 50)
 
 @bot.event
@@ -250,7 +250,7 @@ async def check_status(ctx):
     
     embed.add_field(
         name="📊 Statistics", 
-        value=f"已回覆頻道數：{len(replied_channels)}", 
+        value=f"Number of channels replied to：{len(replied_channels)}", 
         inline=False
     )
     
@@ -286,7 +286,7 @@ async def check_channel(ctx):
     
     embed.add_field(
         name="Monitoring Status",
-        value=f"{'✅ will be monitored' if is_monitored else '❌ 不會被監控'}",
+        value=f"{'✅ will be monitored' if is_monitored else '❌ Not subject to surveillance'}",
         inline=False
     )
     
@@ -372,7 +372,7 @@ async def help_command(ctx):
     """顯示機器人指令幫助"""
     embed = discord.Embed(
         title="🤖 Robot Command Manual",
-        description="以下是可用的指令：",
+        description="The following commands are available:：",
         color=discord.Color.blue()
     )
     
@@ -402,4 +402,5 @@ if __name__ == '__main__':
     else:
         print('✅ Token 已載入')
         print(f'✅ Token 長度：{len(TOKEN)} 字元')
+
         bot.run(TOKEN)
